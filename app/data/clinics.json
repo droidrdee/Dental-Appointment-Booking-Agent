@@ -1,0 +1,42 @@
+[
+  {
+    "clinic_id": "smilecare_dental",
+    "name": "SmileCare Dental",
+    "timezone": "Asia/Kolkata",
+    "operating_hours": {
+      "monday": { "open": "10:00", "close": "19:00", "closed": false },
+      "tuesday": { "open": "10:00", "close": "19:00", "closed": false },
+      "wednesday": { "open": "10:00", "close": "19:00", "closed": false },
+      "thursday": { "open": "10:00", "close": "19:00", "closed": false },
+      "friday": { "open": "10:00", "close": "19:00", "closed": false },
+      "saturday": { "closed": true },
+      "sunday": { "closed": true }
+    },
+    "services": [
+      {
+        "name": "Dental Cleaning",
+        "duration_minutes": 45,
+        "aliases": ["cleaning", "teeth cleaning", "scale and polish"]
+      },
+      {
+        "name": "Tooth Extraction",
+        "duration_minutes": 60,
+        "aliases": ["extraction", "remove tooth", "tooth removal"]
+      },
+      {
+        "name": "Root Canal",
+        "duration_minutes": 90,
+        "aliases": ["root canal treatment", "rct"]
+      },
+      {
+        "name": "Dental Filling",
+        "duration_minutes": 45,
+        "aliases": ["filling", "cavity filling", "cavity"]
+      }
+    ],
+    "phone": "+91-98765-43210",
+    "email": "appointments@smilecare.example",
+    "google_calendar_id": "primary"
+  }
+]
+
