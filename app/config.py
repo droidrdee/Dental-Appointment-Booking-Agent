@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     twilio_auth_token: str | None = None
     twilio_from_number: str | None = None
     twilio_test_to_number: str | None = None
+    twilio_use_test_number: bool = False
 
     model_config = SettingsConfigDict(
         env_file=".env",

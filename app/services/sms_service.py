@@ -15,7 +15,11 @@ class SmsService:
         clinic: ClinicConfig,
         booking: Booking,
     ) -> str:
-        recipient = to_number or self.settings.twilio_test_to_number
+        recipient = (
+            self.settings.twilio_test_to_number
+            if self.settings.twilio_use_test_number
+            else to_number or self.settings.twilio_test_to_number
+        )
         if not recipient:
             raise RuntimeError("No SMS recipient available.")
         if not all(

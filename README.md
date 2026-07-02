@@ -142,10 +142,7 @@ Render can deploy this repository as a Python web service.
    - `TWILIO_AUTH_TOKEN`
    - `TWILIO_FROM_NUMBER`
    - `TWILIO_TEST_TO_NUMBER` (optional fallback for local simulation)
-
-Render provides `PORT` automatically, so do not hard-code it.
-
-If you prefer a manifest, add the following `render.yaml` file to the repo and Render will detect the service:
+- `TWILIO_USE_TEST_NUMBER` (set to `true` to force SMS to the verified test recipient)
 
 ```yaml
 services:
