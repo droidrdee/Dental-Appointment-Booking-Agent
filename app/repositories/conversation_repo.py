@@ -66,7 +66,6 @@ class ConversationRepository:
         query = (
             self._collection()
             .where("clinic_id", "==", clinic_id)
-            .order_by("updated_at")
             .limit(limit)
             .offset(offset)
         )

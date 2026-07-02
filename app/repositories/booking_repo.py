@@ -20,7 +20,6 @@ class BookingRepository:
         query = (
             self._collection()
             .where("clinic_id", "==", clinic_id)
-            .order_by("created_at")
             .limit(limit)
             .offset(offset)
         )
@@ -36,7 +35,6 @@ class BookingRepository:
         query = (
             self._collection()
             .where("call_id", "==", call_id)
-            .order_by("created_at")
             .limit(1)
         )
         snapshots = list(query.stream())
