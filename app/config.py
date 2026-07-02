@@ -6,7 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_env: Literal["local", "test", "production"] = "local"
+    app_env: Literal["local", "test", "production", "render"] = "local"
     default_clinic_id: str = "smilecare_dental"
     default_timezone: str = "Asia/Kolkata"
     admin_api_key: str = Field(default="change-me")

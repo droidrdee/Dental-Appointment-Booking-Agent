@@ -123,13 +123,40 @@ curl -H "X-Admin-Key: $ADMIN_API_KEY" \
 
 ## Deployment
 
-Railway can run the included `Procfile` or `railway.json`:
+Render can deploy this repository as a Python web service.
 
-```text
-uvicorn app.main:app --host 0.0.0.0 --port $PORT
+### Render setup
+
+1. Create a new Web Service on Render.
+2. Connect your GitHub repository and select the correct branch.
+3. Use these settings:
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+4. Add the required environment variables in Render's dashboard. At minimum:
+   - `APP_ENV=render`
+   - `ADMIN_API_KEY`
+   - `GOOGLE_SERVICE_ACCOUNT_JSON_BASE64` or `GOOGLE_APPLICATION_CREDENTIALS`
+   - `FIREBASE_SERVICE_ACCOUNT_JSON_BASE64` or `FIREBASE_CREDENTIALS_PATH`
+   - `FIREBASE_PROJECT_ID`
+   - `TWILIO_ACCOUNT_SID`
+   - `TWILIO_AUTH_TOKEN`
+   - `TWILIO_FROM_NUMBER`
+   - `TWILIO_TEST_TO_NUMBER` (optional fallback for local simulation)
+
+Render provides `PORT` automatically, so do not hard-code it.
+
+If you prefer a manifest, add the following `render.yaml` file to the repo and Render will detect the service:
+
+```yaml
+services:
+  - type: web
+    name: dental-appointment-booking-agent
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
 ```
-
-Set all `.env` values in Railway secrets. For service account JSON, prefer the base64 env vars so secrets are not committed.
 
 ## Known Limitations
 
