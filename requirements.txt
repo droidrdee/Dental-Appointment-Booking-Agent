@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+google-api-python-client
+google-auth
+twilio
+firebase-admin
+python-dotenv
+pytest
+httpx
+python-dateutil
+pytz
+
