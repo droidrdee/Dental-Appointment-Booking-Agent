@@ -142,7 +142,8 @@ Render can deploy this repository as a Python web service.
    - `TWILIO_AUTH_TOKEN`
    - `TWILIO_FROM_NUMBER`
    - `TWILIO_TEST_TO_NUMBER` (optional fallback for local simulation)
-- `TWILIO_USE_TEST_NUMBER` (set to `true` to force SMS to the verified test recipient)
+   - `TWILIO_USE_TEST_NUMBER` (set to `true` to force SMS to the verified test recipient)
+   - `GOOGLE_CALENDAR_ID` (optional override to point events to a shared calendar)
 
 ```yaml
 services:

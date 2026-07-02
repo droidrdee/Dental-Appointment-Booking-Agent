@@ -13,6 +13,8 @@ class Settings(BaseSettings):
 
     google_application_credentials: str | None = None
     google_service_account_json_base64: str | None = None
+    # Optional override to target a specific Google Calendar ID (useful for service accounts)
+    google_calendar_id: str | None = None
 
     firebase_credentials_path: str | None = None
     firebase_service_account_json_base64: str | None = None

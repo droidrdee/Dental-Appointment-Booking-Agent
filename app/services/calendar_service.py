@@ -19,9 +19,10 @@ class CalendarService:
     def create_event(self, clinic: ClinicConfig, booking: Booking) -> str:
         event_body = build_calendar_event(clinic, booking)
         service = get_calendar_client()
+        calendar_id = self.settings.google_calendar_id or clinic.google_calendar_id
         event = (
             service.events()
-            .insert(calendarId=clinic.google_calendar_id, body=event_body)
+            .insert(calendarId=calendar_id, body=event_body)
             .execute()
         )
         return str(event["id"])
